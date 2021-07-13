@@ -7,6 +7,7 @@ import { PrimaryLoadingIndicator } from "./presentation/common/UI/LoadingIndicat
 
 //import static css to override antd
 import "./presentation/common/Style/style.css";
+import LayoutProvider from "./presentation/Layout";
 
 //component imports
 const Login = React.lazy(() => import("./presentation/Login"));
@@ -29,6 +30,9 @@ function App() {
           <Switch>
             <Route exact path={routes.LOGIN} component={Login} />
             <Route exact path={routes.SIGNUP} component={Signup} />
+            <LayoutProvider>
+              {/* Add routes that require layout here */}
+            </LayoutProvider>
           </Switch>
         </Suspense>
       </Router>
